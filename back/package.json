@@ -1,0 +1,33 @@
+{
+  "name": "scholarship-page",
+  "version": "1.0.0",
+  "description": "This is a back to the scholarship app",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon ./src/index.js",
+    "start": "node ./src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndresER23/ScholarShip-Notifier.git"
+  },
+  "author": "DriuDev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndresER23/ScholarShip-Notifier/issues"
+  },
+  "homepage": "https://github.com/AndresER23/ScholarShip-Notifier#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.22",
+    "standard": "^17.0.0"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^3.3.2"
+  },
+  "eslintConfig": {
+    "extends": "standard"
+  }
+}
