@@ -1,8 +1,15 @@
 import express from 'express'
 import scholarShipsRouter from './routes/scholarships.js'
-const app = express()
+import cors from 'cors'
 
+const app = express()
 app.use(express.json())
+app.use(cors())
+
+const ALLOW_CORS_DIRECTION = 'http://localhost:3000'
+app.use(cors({
+  origin: ALLOW_CORS_DIRECTION
+}))
 
 app.use('/api/scholarships', scholarShipsRouter)
 
