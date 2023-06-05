@@ -2,9 +2,10 @@ import { onAuthStateChanged } from 'firebase/auth'
 import { auth } from './client'
 
 const mapUserFromFirebaseAuthToUser = (user) => {
-  const { photoUrl, displayName, email } = user
+  const { photoURL, displayName, email } = user
+  console.log(user)
   return {
-    imageUrl: photoUrl,
+    imageUrl: photoURL,
     name: displayName,
     email
   }

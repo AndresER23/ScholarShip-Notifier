@@ -1,11 +1,12 @@
+import NavBarImage from 'components/NavBarImage'
 import Image from 'next/image'
-
+import styles from 'styles/navbar/navbar.module.css'
 const NavBar = () => {
   return (
-    <div>
-      <div><Image src={'/menu.png'} width={49} height={49}/></div>
-      <div>Todo becas</div>
-      <div></div>
+    <div className={styles.navigator}>
+      <NavBarImage className={styles.userImage}/>
+      <h3 className={styles.h3}>Todo becas</h3>
+      <Image src={'/menu.png'} width={29} height={29} className={styles.img} alt='hamburguer menu'/>
     </div>
   )
 }

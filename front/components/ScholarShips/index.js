@@ -8,6 +8,7 @@ import styles from 'styles/scholarShip/card.module.css'
 const ScholarShips = () => {
   const [scholarships, setScholarships] = useState()
   const user = useUser()
+  console.log(scholarships)
 
   useEffect(() => {
     fetch(GET_SCHOLARSHIPS)
@@ -27,6 +28,9 @@ const ScholarShips = () => {
             scholarshipUrl={scholarship.scholship_link}
             imgLink={scholarship.img_link}
             title={scholarship.title}
+            city={scholarship.city}
+            country={scholarship.country}
+            deadline={scholarship.deadline}
           />
             ))
           )

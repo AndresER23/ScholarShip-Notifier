@@ -1,3 +1,4 @@
+import NavBar from 'components/NavBar'
 import styles from 'styles/layout/index.module.css'
 
 export const metadata = {
@@ -10,7 +11,10 @@ export default function RootLayout ({ children }) {
     <html lang="en">
       <body className={styles.body}>
         <div className={styles.div}>
-          <main className={styles.main}>{children}</main>
+          <main className={styles.main}>
+            <NavBar />
+            <div className={styles.content}>{children}</div>
+          </main>
         </div>
       </body>
     </html>
