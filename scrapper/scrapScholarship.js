@@ -14,7 +14,6 @@ const insertScholarShip = (obj, additionalInfo, callback) => {
     `INSERT INTO scrapped_scholarships (title, scholship_link, img_link, state, city, country, deadline) VALUES ('${title}', '${href}', '${img}', '1' , '${city}', '${country}' ,'${deadline}')`,
     (error, results) => {
       if (error) {
-        console.log(error)
         if (error.code === 'ER_DUP_ENTRY') {
           // Título duplicado
           const error = 'Título duplicado'
@@ -69,7 +68,7 @@ const sendNewScholarShip = (scholarshipId) => {
     }
     return data
   })
-
+  const newScholarShips = []
   allScholarShips.forEach(async (element, i) => {
     const newPage = await browser.newPage()
     await newPage.goto(element.href)
@@ -105,12 +104,10 @@ const sendNewScholarShip = (scholarshipId) => {
           console.log('El título ya existe en la base de datos')
         } else console.error('Error al insertar el objeto:', error)
       } else {
-        console.log('Objeto insertado correctamente:', res)
-        // sendNewScholarShip(res.insertId)
+        sendNewScholarShip(res.insertId)
       }
     })
   })
-
   // const titles = allScholarShips.map(element => element.title)
   // updateState(titles, error => {
   //   console.log(error)
